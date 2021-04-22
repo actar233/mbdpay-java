@@ -24,16 +24,16 @@ public class MbdPayClient {
     /**
      * app_id
      */
-    private final String app_id;
+    private final String appId;
 
     /**
      * app_key
      */
-    private final String app_key;
+    private final String appKey;
 
-    public MbdPayClient(String app_id, String app_key) {
-        this.app_id = app_id;
-        this.app_key = app_key;
+    public MbdPayClient(String appId, String appKey) {
+        this.appId = appId;
+        this.appKey = appKey;
         this.gson = new Gson();
         this.okHttpClient = new OkHttpClient().newBuilder().build();
     }
@@ -41,13 +41,11 @@ public class MbdPayClient {
     public <REQ, RSP> RSP post(String url, REQ request, Class<RSP> clazz) throws MbdPayException {
         try {
             Map<String, String> params = params(request);
-            params.put("app_id", this.app_id);
+            params.put("app_id", this.appId);
             String sign = sign(params);
             params.put("sign", sign);
 
             String json = gson.toJson(params);
-
-            System.out.println(json);
 
             RequestBody requestBody = RequestBody.create(json.getBytes(StandardCharsets.UTF_8));
 
@@ -67,10 +65,7 @@ public class MbdPayClient {
                 throw new MbdPayException("请求失败");
             }
 
-            String string = responseBody.string();
-            System.out.println(string);
-
-            return gson.fromJson(string, clazz);
+            return gson.fromJson(responseBody.string(), clazz);
         } catch (IOException | MbdPayException e) {
             if (e instanceof MbdPayException) {
                 throw (MbdPayException) e;
@@ -96,7 +91,7 @@ public class MbdPayClient {
             String value = map.get(key);
             builder.put(key, value);
         }
-        String signString = String.format("%s&key=%s", builder.build(), this.app_key);
+        String signString = String.format("%s&key=%s", builder.build(), this.appKey);
         return md5(signString);
     }
 
@@ -123,7 +118,7 @@ public class MbdPayClient {
     public String openid(String target_url) {
         String qs = QueryStringBuilder.create()
                 .put("target_url", target_url)
-                .put("app_id", this.app_id)
+                .put("app_id", this.appId)
                 .build();
         return String.format("%s?%s", Constant.OPENID, qs);
     }
