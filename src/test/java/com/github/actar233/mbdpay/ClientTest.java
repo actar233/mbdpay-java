@@ -8,6 +8,7 @@ public class ClientTest {
     public static void main(String[] args) {
         MbdPayClient client = new MbdPayClient("<app_id>", "<app_key>");
         aliPay(client);
+        openid(client);
         wxH5(client);
         wxJsApi(client);
         searchOrder(client);
@@ -34,6 +35,10 @@ public class ClientTest {
             System.out.println("请求异常");
             e.printStackTrace();
         }
+    }
+
+    private static void openid(MbdPayClient client){
+        System.out.println(client.openid("https://www.baidu.com"));
     }
 
     private static void wxH5(MbdPayClient client) {
