@@ -5,6 +5,8 @@
 # 如何使用
 
 1. 引入jetpack仓库
+
+maven 
 ```xml
 <repositories>
     <repository>
@@ -14,13 +16,32 @@
 </repositories>
 ```
 
+gradle
+```groovy
+allprojects {
+	repositories {
+		...
+		maven { url 'https://www.jitpack.io' }
+	}
+}
+```
+
 2. 引入SDK
+
+maven
 ```xml
 <dependency>
     <groupId>com.github.actar233</groupId>
     <artifactId>mbdpay-java</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.0</version>
 </dependency>
+```
+
+gradle
+```groovy
+dependencies {
+    implementation 'com.github.actar233:mbdpay-java:1.0.0'
+}
 ```
 
 3. 初始化
