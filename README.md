@@ -33,14 +33,14 @@ maven
 <dependency>
     <groupId>com.github.actar233</groupId>
     <artifactId>mbdpay-java</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 gradle
 ```groovy
 dependencies {
-    implementation 'com.github.actar233:mbdpay-java:1.0.0'
+    implementation 'com.github.actar233:mbdpay-java:1.0.1'
 }
 ```
 

@@ -6,7 +6,7 @@
 
     <groupId>com.github.actar233</groupId>
     <artifactId>mbdpay-java</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <build>
         <plugins>
@@ -36,7 +36,7 @@
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
-            <version>4.9.0</version>
+            <version>3.14.9</version>
         </dependency>
     </dependencies>
 

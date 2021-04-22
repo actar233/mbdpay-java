@@ -47,12 +47,13 @@ public class MbdPayClient {
 
             String json = gson.toJson(params);
 
-            RequestBody requestBody = RequestBody.create(json.getBytes(StandardCharsets.UTF_8));
+            MediaType mediaType = MediaType.parse("application/json;charset=utf-8");
+
+            RequestBody requestBody = RequestBody.create(mediaType, json);
 
             Request req = new Request.Builder()
                     .url(url)
                     .method("POST", requestBody)
-                    .addHeader("Content-Type", "application/json;charset=utf-8")
                     .build();
 
             Response rsp = okHttpClient.newCall(req).execute();
