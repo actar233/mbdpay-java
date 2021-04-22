@@ -8,8 +8,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import okhttp3.*;
-import org.github.actar233.mbdpay.model.*;
-import org.github.actar233.mbdpay.notice.*;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -217,9 +215,9 @@ public class MbdPayClient {
     }
 
     @SuppressWarnings("DuplicatedCode")
-    public Notice parseNotice(Map<String,Object> map) throws MbdPayException {
+    public Notice parseNotice(Map<String, Object> map) throws MbdPayException {
         Object objType = map.get("type");
-        if (!(objType instanceof String)){
+        if (!(objType instanceof String)) {
             throw new MbdPayException("未知的type类型");
         }
         NoticeType type = NoticeType.valueOf((String) objType);
