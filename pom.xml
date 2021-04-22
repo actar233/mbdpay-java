@@ -5,8 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.actar233</groupId>
-    <artifactId>mbdpay</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>mbdpay-java</artifactId>
+    <version>0.0.1</version>
+
     <build>
         <plugins>
             <plugin>
