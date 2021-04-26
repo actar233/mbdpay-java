@@ -74,6 +74,8 @@ public class ClientTest {
             if (result.isSuccess()) {
                 System.out.println("查询成功");
                 System.out.println(result);
+                // 获取支付参数
+                System.out.println(result.getPayParams());
             } else {
                 System.out.println("查询失败");
                 System.out.println(result.getError());
