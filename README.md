@@ -2,6 +2,8 @@
 
 [![](https://www.jitpack.io/v/actar233/mbdpay-java.svg)](https://www.jitpack.io/#actar233/mbdpay-java)
 
+# 因面包多业务方面调整，此 SDK 已不再可用。
+
 # 如何使用
 
 1. 引入jetpack仓库
